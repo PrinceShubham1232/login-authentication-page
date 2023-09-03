@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url(images/bg.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper .box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .box.log{
+    transition: traform .18 ease;
+    transform: translateX(0);
+
+}
+
+.wrapper.active .box.log{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .box.reg{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .box.reg{
+    transition: transform .18 ease;
+    transform: translateX(0);
+
+}
+
+h2{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 57px;
+
+}
+
+button{
+    width: 100%;
+    height:  40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+}
+.reg-link{
+    font-size: .9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.reg-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 1px;
+}
+.reg-link p a:hover{
+    text-decoration: underline;
+}
+
+#welcome {
+    text-align: center;
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#welcome h1 {
+    color: rgb(255, 139, 6);
+}
+
+#welcome p {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#welcome button {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+#welcome button:hover {
+    background-color: rgb(255, 139, 6);
+}
+
+@media (max-width: 433px){
+    .wrapper{
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+    .input-box{
+        width: 290px;
+    }
+    button{
+        width: 290px;
+    }
+}
+@media (max-width: 353px){ 
+    .input-box{
+        width: 220px;
+    }
+    button{
+        width: 220px;
+    }
+}
